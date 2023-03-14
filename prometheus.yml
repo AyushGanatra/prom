@@ -28,7 +28,7 @@ scrape_configs:
     - name: tag:aws:autoscaling:groupName
       values:
       - preprod-v2-ecs-hosts
-- job_name: preprod-eks
+- job_name: preprod_eks
   honor_timestamps: true
   scrape_interval: 60s
   scrape_timeout: 60s
