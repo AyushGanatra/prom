@@ -28,6 +28,22 @@ scrape_configs:
     - name: tag:aws:autoscaling:groupName
       values:
       - preprod-v2-ecs-hosts
+- job_name: preprod-eks
+  honor_timestamps: true
+  scrape_interval: 60s
+  scrape_timeout: 60s
+  metrics_path: /metrics
+  scheme: http
+  ec2_sd_configs:
+  - endpoint: ""
+    region: ap-southeast-1
+    profile: arn:aws:iam::616035352558:instance-profile/eks-98c30a8e-58aa-ac04-fdad-311d3643f548
+    refresh_interval: 1m
+    port: 9100
+    filters:
+    - name: tag:eks:cluster-name
+      values:
+      - preprod-eks-cluster
 - job_name: preprod-v2-prometheus-cadvisor
   honor_timestamps: true
   scrape_interval: 60s
