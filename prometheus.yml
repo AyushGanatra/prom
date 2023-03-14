@@ -39,7 +39,7 @@ scrape_configs:
     region: ap-southeast-1
     profile: arn:aws:iam::616035352558:instance-profile/eks-98c30a8e-58aa-ac04-fdad-311d3643f548
     refresh_interval: 1m
-    port: 9100
+    port: 32767
     filters:
     - name: tag:eks:cluster-name
       values:
